@@ -1,0 +1,76 @@
+<html>
+<head>
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #FFE4C4; 
+  color: black; 
+  border: 2px solid #000000;
+}
+
+.button1:hover {
+  background-color: #FFA07A;
+  color: white;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid black;;
+  text-align: left;
+  padding: 8px;
+}
+
+body {
+  background-color: Bisque;
+}
+</style>
+</head>
+
+<body>
+<h1 style="font-size:60px;">HOT 100 BILLBOARD CHARTS</h1>
+<h2 style="font-size:30px;">Week of January 30, 2021</h2>
+<button class="button button1">Add New Song</button>
+<table>
+  <tr>
+    <th>RANK</th>
+    <th>SONG NAME</th>
+    <th>ARTIST NAME</th>
+    <th>WEEKS ON CHART</th>
+    <th>UPDATE</th>
+    <th>DELETE</th>
+  </tr>
+  <tr>
+  {% for song in songs %}
+    <tr>   
+      <td>{{song['rank']}}</td>
+      <td>{{song['title']}}</td>          
+      <td>{{song['artist']}}</td>
+      <td>{{song['weeksOn']}}</td>
+      <td><button type="button" onclick="alert('Hello world!')">Update</button></td>
+      <td><button type="button" onclick="alert('Hello world!')">Delete</button></td>
+  </tr>
+  {% endfor %}
+</table> 
+</body>
+</html>
